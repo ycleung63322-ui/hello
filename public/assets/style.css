@@ -1,0 +1,246 @@
+:root {
+    --bg: #f3efe6;
+    --bg-accent: #e7f0ea;
+    --ink: #1c2420;
+    --muted: #5a675f;
+    --line: #d5ddd7;
+    --brand: #1f6f54;
+    --brand-dark: #155541;
+    --danger: #8b2e2e;
+    --danger-bg: #f8eaea;
+    --ok: #1f5c3a;
+    --ok-bg: #e7f4ec;
+    --card: #fffcf7;
+    --shadow: 0 18px 40px rgba(28, 36, 32, 0.08);
+    --radius: 18px;
+    --font: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    --display: "Source Serif 4", "Noto Serif TC", Georgia, serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: var(--font);
+    color: var(--ink);
+    background:
+        radial-gradient(circle at top left, rgba(31, 111, 84, 0.12), transparent 40%),
+        radial-gradient(circle at top right, rgba(196, 149, 78, 0.14), transparent 35%),
+        linear-gradient(180deg, var(--bg-accent), var(--bg));
+}
+
+a {
+    color: var(--brand);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--brand-dark);
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 20px 40px;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 36px;
+}
+
+.brand {
+    font-family: var(--display);
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--ink);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.nav a {
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.nav a:hover {
+    color: var(--ink);
+}
+
+.main {
+    flex: 1;
+}
+
+.hero, .panel {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.hero {
+    padding: 48px 40px;
+}
+
+.hero h1, .panel h1 {
+    font-family: var(--display);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.15;
+    margin: 0 0 14px;
+}
+
+.lead, .muted {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.panel {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 32px;
+}
+
+.panel-wide {
+    max-width: 640px;
+}
+
+.form {
+    display: grid;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+label {
+    display: grid;
+    gap: 8px;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    font: inherit;
+    background: #fff;
+    color: var(--ink);
+}
+
+input:focus {
+    outline: 2px solid rgba(31, 111, 84, 0.25);
+    border-color: var(--brand);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 999px;
+    background: var(--brand);
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--brand-dark);
+    color: #fff;
+}
+
+.btn-small {
+    padding: 8px 14px;
+    font-size: 0.95rem;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--brand);
+    border: 1px solid var(--brand);
+}
+
+.btn-secondary:hover {
+    background: rgba(31, 111, 84, 0.08);
+    color: var(--brand-dark);
+}
+
+.alert {
+    padding: 12px 14px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
+.alert ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.alert-error {
+    background: var(--danger-bg);
+    color: var(--danger);
+}
+
+.alert-success {
+    background: var(--ok-bg);
+    color: var(--ok);
+}
+
+.meta {
+    display: grid;
+    gap: 10px;
+    margin: 24px 0;
+    padding: 18px;
+    border-radius: 14px;
+    background: rgba(31, 111, 84, 0.05);
+}
+
+.meta div {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.footer {
+    margin-top: 40px;
+    color: var(--muted);
+    font-size: 0.92rem;
+    text-align: center;
+}
+
+@media (max-width: 640px) {
+    .hero, .panel {
+        padding: 28px 20px;
+    }
+
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
